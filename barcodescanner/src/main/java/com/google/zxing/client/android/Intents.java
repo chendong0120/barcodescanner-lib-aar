@@ -204,6 +204,11 @@ public final class Intents {
      */
     public static final String ORIENTATION_LOCK = "ORIENTATION_LOCK";
 
+    /**
+     * 设置是否显示 ToolBar 默认 不显示
+     */
+    public static final String TOOL_BAR = "TOOL_BAR";
+
     private Scan() {
     }
   }
