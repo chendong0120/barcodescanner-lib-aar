@@ -23,6 +23,8 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 
 import com.google.zxing.BarcodeFormat;
@@ -69,7 +71,6 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -88,7 +89,7 @@ import barcodescanner.xservices.nl.barcodescanner.R;
  * @author dswitkin@google.com (Daniel Switkin)
  * @author Sean Owen
  */
-public final class CaptureActivity extends Activity implements SurfaceHolder.Callback {
+public final class CaptureActivity extends AppCompatActivity implements SurfaceHolder.Callback {
 
     private static final String TAG = CaptureActivity.class.getSimpleName();
 
@@ -169,9 +170,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         int showToolBar = getIntent().getIntExtra(Intents.Scan.TOOL_BAR, NO_REQUESTED_TOOL_BAR);
         if (showToolBar == 1) {
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-            setActionBar(toolbar);
-            getActionBar().setDisplayHomeAsUpEnabled(true);
-            getActionBar().setDisplayShowTitleEnabled(false);
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
     }
 

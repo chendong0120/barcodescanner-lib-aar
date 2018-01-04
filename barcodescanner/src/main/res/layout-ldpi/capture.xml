@@ -22,10 +22,16 @@
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"/>
 
-  <android.widget.Toolbar
+
+  <android.support.v7.widget.Toolbar
       android:id="@+id/toolbar"
+      android:layout_height="wrap_content"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content" />
+      android:minHeight="?attr/actionBarSize"
+      android:background="?attr/colorPrimary"
+      android:layout_alignParentTop="true"
+      android:layout_alignParentLeft="true"
+      app:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
   <com.google.zxing.client.android.ViewfinderView
       android:id="@+id/viewfinder_view"
@@ -207,12 +213,14 @@
       android:text="@string/msg_default_status"
       android:textColor="@color/status_text"/>
 
-  <Button android:id="@+id/flip_button"
+  <Button
+      android:id="@+id/flip_button"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="top|left"
+      android:layout_marginLeft="50dp"
       android:drawableLeft="@drawable/flip_camera"
-      android:visibility="invisible"/>
+      android:visibility="invisible" />
 
   <Button android:id="@+id/torch_button"
       android:layout_width="wrap_content"
